@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Skeleton from '@material-ui/lab/Skeleton';
@@ -15,8 +15,8 @@ const useStyles = makeStyles(theme => ({
   message: {
     width:'100%',
     maxWidth:1200,
-    height: 72,
-    margin: theme.spacing(3),
+    height: 67,
+    margin: theme.spacing(1),
   },
 }))
 
@@ -45,7 +45,7 @@ export const MessageSkeleton = () => {
     <Grid container>
     {
       elements.map(element => {
-        return <Skeleton disabledAnimate={false} variant="rect"  className={classes.message} key={element}  />
+        return <Skeleton disabledAnimate={false} variant="rect" className={classes.message} key={element}  />
         ;
       })
     }

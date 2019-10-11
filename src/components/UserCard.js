@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactCountryFlag from "react-country-flag";
 import Typography from '@material-ui/core/Typography';
@@ -21,6 +21,9 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     marginTop: theme.spacing(5),
     display: 'flex'
+  },
+  tite: {
+    color: indigo[900],
   },
   card: {
     minWidth: 250,
@@ -78,7 +81,7 @@ const UserCard = ({user}) => {
         </IconButton>
         </CardMedia>
         <CardContent>
-          <Typography gutterBottom variant="p" component="h2">
+          <Typography gutterBottom className={classes.title} variant="p" component="h2">
             {user.name}
             <IconButton edge="end" onClick={toggle} size="small">
               { state ?

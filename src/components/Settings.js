@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-
+import indigo from '@material-ui/core/colors/indigo';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,19 +16,7 @@ const useStyles = makeStyles(theme => ({
     height: 500,
       justifyContent: "center",
     alignItems: 'center',
-    color: theme.palette.text.secondary,
-  },
-  profileCard: {
-    height: 500,
-    display: 'flex',
-    justifyContent: "center",
-    alignItems: 'center'
-  },
-  icons: {
-    display: 'flex',
-    padding: theme.spacing(2),
-    justifyContent: "center",
-    alignItems: 'center'
+    color: indigo[900],
   },
   banner: {
     display: 'flex',
@@ -36,6 +24,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     alignItems: 'center',
     height: 400,
+    color: indigo[600],
   }
 }));
 
