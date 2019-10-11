@@ -44,11 +44,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header() {
   const classes = useStyles();
-  const [num, setNum ] = React.useState(4);
-
+  const [state, setState ] = React.useState(4);
 
   const checkNotification = () => {
-    setNum(0)
+    setState(0)
   }
 
   return (
@@ -72,7 +71,7 @@ export default function Header() {
 
             <NavLink to="/messages">
               <IconButton onClick={checkNotification} className={classes.menuButton} aria-label="menu">
-                <Badge badgeContent={num} color="primary">
+                <Badge badgeContent={state} color="primary">
                   <MailOutlinedIcon />
                 </Badge>
               </IconButton>

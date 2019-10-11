@@ -10,7 +10,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Divider from '@material-ui/core/Divider';
-
+import Paper from '@material-ui/core/Paper';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles(theme => ({
@@ -18,6 +18,9 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
 
     backgroundColor: theme.palette.background.paper,
+  },
+  item: {
+    margin: theme.spacing(2),
   },
   inline: {
     display: 'inline',
@@ -28,7 +31,7 @@ const MessagePreview = ({user}) => {
   const classes = useStyles();
 
   return (
-<>
+<Paper>
     <ListItem alignItems="center" className={classes.item}>
       <ListItemAvatar>
           <Avatar alt={user.name} src={user.thumbnail} />
@@ -55,8 +58,8 @@ const MessagePreview = ({user}) => {
         <MoreVertIcon/>
       </ListItemIcon>
     </ListItem>
-<Divider/>
-</>
+
+</Paper>
 
 
 

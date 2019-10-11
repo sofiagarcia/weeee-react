@@ -45,7 +45,7 @@ export const MessageSkeleton = () => {
     <Grid container>
     {
       elements.map(element => {
-        return <Skeleton disabledAnimate={false} variant="rect"  className={classes.card} key={element}  />
+        return <Skeleton disabledAnimate={false} variant="rect"  className={classes.message} key={element}  />
         ;
       })
     }

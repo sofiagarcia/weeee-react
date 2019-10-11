@@ -10,5 +10,5 @@ export {
   Header,
   UserGrid,
   MessageList,
-  Settings
+  SettingsLayout
 };

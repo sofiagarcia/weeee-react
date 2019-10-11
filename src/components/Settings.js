@@ -46,11 +46,11 @@ export default function SettingsLayout() {
     <Container className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={4}>
-          <Paper className={classes.profileCard}>
-            <Typography variant="p">User Card</Typography>
+          <Paper className={classes.paper}>
+            <Typography variant="h2">User Card</Typography>
           </Paper>
         </Grid>
-        <Grid item xs={9}>
+        <Grid item xs={8}>
           <Paper className={classes.paper}>
             <Typography variant="h2">Settings Overview</Typography>
           </Paper>

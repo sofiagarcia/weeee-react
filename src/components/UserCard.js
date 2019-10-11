@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 250,
     margin: theme.spacing(3),
     textAlign: 'left',
-    backgroundColor: indigo[50]
+
   },
   media: {
     height: 200,
