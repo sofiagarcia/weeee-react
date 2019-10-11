@@ -1,12 +1,13 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import PageTemplate from './template';
-import UserGrid from '../components/UserGrid'
+import { UserGrid, MessageList, Homepage, SettingsLayout } from '../components'
+
 
 export const Home = () =>
   <section className="home">
     <PageTemplate />
-    <h2>Homepage</h2>
+    <Homepage />
   </section>
 
 
@@ -21,13 +22,13 @@ export const Explore = () =>
 export const Messages = () =>
   <section className="messages">
     <PageTemplate />
-    <h2>Messages</h2>
+    <MessageList />
   </section>
 
 export const Settings = () =>
   <section className="settings">
     <PageTemplate />
-    <h2>Settings</h2>
+    <SettingsLayout />
   </section>
 
 export const Whoops404 = ({location}) =>

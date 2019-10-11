@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import PageTemplate from './template';
-import UserGrid from '../components/UserGrid'
+import { UserGrid, MessageList } from '../components'
 
 export const Home = () =>
   <section className="home">
@@ -20,7 +20,7 @@ export const Explore = () =>
 export const Messages = () =>
   <section className="messages">
     <PageTemplate />
-    <h2>Messages</h2>
+    <MessageList />
   </section>
 
 export const Settings = () =>

@@ -4,6 +4,7 @@ import indigo from '@material-ui/core/colors/indigo';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import Toolbar from '@material-ui/core/Toolbar';
 import Badge from '@material-ui/core/Badge';
+import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { NavLink } from 'react-router-dom';
@@ -19,6 +20,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     padding: theme.spacing(3),
     backgroundColor: 'white',
+    marginBottom:  theme.spacing(3),
   },
   mobile: {
     display: 'flex',
@@ -42,9 +44,14 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header() {
   const classes = useStyles();
+  const [state, setState ] = React.useState(4);
+
+  const checkNotification = () => {
+    setState(0)
+  }
 
   return (
-    <nav >
+    <Box boxShadow={1}>
     <Toolbar className={classes.root}>
         <div className={classes.mobile}>
             <IconButton className={classes.menuButton} aria-label="menu">
@@ -63,8 +70,8 @@ export default function Header() {
               </NavLink>
 
             <NavLink to="/messages">
-              <IconButton className={classes.menuButton} aria-label="menu">
-                <Badge badgeContent={4} color="primary">
+              <IconButton onClick={checkNotification} className={classes.menuButton} aria-label="menu">
+                <Badge badgeContent={state} color="primary">
                   <MailOutlinedIcon />
                 </Badge>
               </IconButton>
@@ -77,6 +84,6 @@ export default function Header() {
             </NavLink>
           </div>
             </Toolbar>
-    </nav>
+    </Box>
   );
 }

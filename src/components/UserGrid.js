@@ -3,45 +3,23 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import axios from "axios";
+import UserData from './UserData';
 import UserCard from './UserCard';
-import Skeleton from '@material-ui/lab/Skeleton';
+import {UserCardSkeleton} from './UserCardSkeleton';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 
-
-class UserGrid extends React.Component {
+class UserGrid extends UserData {
   state = {
     users: [],
     isLoading: true,
     errors: null
   };
 
-  getUsers() {
-    axios
-      .get("https://randomuser.me/api/?results=20")
-      .then(response =>
-        response.data.results.map(user => ({
-          name: `${user.name.first} ${user.name.last}`,
-          nationality: `${user.nat}`,
-          email: `${user.email}`,
-          image: `${user.picture.large}`
-        }))
-      )
-      .then(users => {
-        this.setState({
-          users,
-          isLoading: false
-        });
-      })
-      .catch(error => this.setState({ error, isLoading: false }));
-  }
-
-  componentDidMount() {
-    this.getUsers();
-  }
-
   render() {
     const { isLoading, users } = this.state;
+
     return(
 
           <Grid container>
@@ -51,7 +29,7 @@ class UserGrid extends React.Component {
                 ;
               })
             ) : (
-              <Skeleton variant="rect" width={250} height={360} />
+               <UserCardSkeleton variant="rect" width={260}  />
             )}
           </Grid>
 
